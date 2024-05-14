@@ -1,4 +1,4 @@
-import { randomPoint } from "https://esm.sh/v135/@turf/random@6/es2022/random.mjs";
+import { randomPoint } from "https://esm.sh/@turf/random@6";
 import { projectInCPU } from "./project-cpu.js";
 import { projectInGPU } from "./project-gpu.js";
 
@@ -7,7 +7,7 @@ const sleep = (time = 500) => {
   return new Promise((resolve) => setTimeout(resolve, time));
 };
 const getGeoPoints = (amount) => {
-  const bbox = [-180, -80, 180, 80];
+  const bbox = [-180, -85, 180, 85];
   // max random Point 1M
   const maxRandom = 1000000;
   if (amount <= maxRandom) {
