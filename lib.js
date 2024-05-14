@@ -122,19 +122,18 @@ export function renderToMap(
 
   // View matrix
   const viewMatrix = mat4.create();
-  mat4.lookAt(viewMatrix, [0, 0, 5], [0, 0, -100], [0, 1, 0]);
+  mat4.lookAt(viewMatrix, [256, 256, 1.5], [256, 256, 0], [0, 1, 0]);
   //  Projection matrix
   const projMatrix = mat4.create();
-  const fovy = 30;
+  const fovy = 90.429 * 2;
   const fovyRadians = DEGREES_TO_RADIANS * fovy;
   mat4.perspective(
     projMatrix,
     fovyRadians, // fovy
     gl.canvas.clientWidth / gl.canvas.clientHeight,
-    1, // near
-    100 // far
+    0.1, // near
+    1.6 // far
   );
-
   let viewProjectionMatrix = mat4.create();
   viewProjectionMatrix = mat4.multiply(
     viewProjectionMatrix,

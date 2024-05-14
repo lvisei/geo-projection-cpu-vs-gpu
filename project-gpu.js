@@ -12,7 +12,7 @@ uniform mat4 u_vpMatrix;
 void main() {
   vec2 projectedPosition = project_mercator(a_Position);
   gl_Position = u_vpMatrix * vec4(projectedPosition, 0, 1.);
-  gl_PointSize = 10.0;
+  gl_PointSize = 2.0;
 }
 `;
 
