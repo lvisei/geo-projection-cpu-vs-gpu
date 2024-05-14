@@ -120,20 +120,23 @@ export function renderToMap(
     return;
   }
 
-  // View matrix
-  const viewMatrix = mat4.create();
-  mat4.lookAt(viewMatrix, [256, 256, 1.5], [256, 256, 0], [0, 1, 0]);
   //  Projection matrix
   const projMatrix = mat4.create();
-  const fovy = 90.429 * 2;
+  const fovy = 120;
   const fovyRadians = DEGREES_TO_RADIANS * fovy;
   mat4.perspective(
     projMatrix,
     fovyRadians, // fovy
     gl.canvas.clientWidth / gl.canvas.clientHeight,
-    0.1, // near
-    1.6 // far
+    1, // near
+    10000 // far
   );
+
+  // View matrix
+  const viewMatrix = mat4.create();
+  const eyeHight = 256 / Math.tan(fovyRadians / 2);
+  mat4.lookAt(viewMatrix, [256, 256, eyeHight], [256, 256, 0], [0, 1, 0]);
+
   let viewProjectionMatrix = mat4.create();
   viewProjectionMatrix = mat4.multiply(
     viewProjectionMatrix,
@@ -141,7 +144,7 @@ export function renderToMap(
     viewMatrix
   );
 
-  webglUtils.resizeCanvasToDisplaySize(gl.canvas, window.devicePixelRatio);
+  webglUtils.resizeCanvasToDisplaySize(gl.canvas);
   //  convert from clip space to pixels
   gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 

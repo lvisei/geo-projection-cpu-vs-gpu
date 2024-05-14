@@ -7,7 +7,7 @@ const sleep = (time = 500) => {
   return new Promise((resolve) => setTimeout(resolve, time));
 };
 const getGeoPoints = (amount) => {
-  const bbox = [-180, -80, 180, 80];
+  const bbox = [-180, -85, 180, 85];
   // max random Point 1M
   const maxRandom = 1000000;
   if (amount <= maxRandom) {
