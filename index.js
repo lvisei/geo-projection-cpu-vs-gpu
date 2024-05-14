@@ -1,4 +1,4 @@
-import { randomPoint } from "https://esm.sh/v135/@turf/random@6/es2022/random.mjs";
+import { randomPoint } from "https://esm.sh/@turf/random@6";
 import { projectInCPU } from "./project-cpu.js";
 import { projectInGPU } from "./project-gpu.js";
 
