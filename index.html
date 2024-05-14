@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geo projection CPU vs GPU</title>
+    <style>
+      body {
+        padding: 20px;
+      }
+      .title {
+        text-align: center;
+      }
+      .input-pane {
+        padding: 20px;
+        text-align: center;
+      }
+      .comparison-pane {
+        display: flex;
+        justify-content: center;
+      }
+      .comparison-item {
+        margin: 20px;
+      }
+      canvas {
+        border: 1px solid rgba(0, 0, 0, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="title">Geographic projection performance in CPU vs GPU</h2>
+    <div class="input-pane">
+      <label for="amountData">The amount of projection data: </label>
+      <input
+        type="number"
+        name="amountData"
+        id="amountData"
+        placeholder="amount of projection data"
+        min="1"
+        value="100000"
+      />
+      <button id="startVS">Start Comparison</button>
+    </div>
+    <div class="comparison-pane">
+      <div class="comparison-item" id="cpu">
+        <p>Projection in CPU</p>
+        <li>Projecte <span id="cpu-projecte-time"></span></li>
+        <li>Projecte & Render <span id="cpu-all-time"></span></li>
+        <canvas id="cpu-canvas" width="800" height="600"></canvas>
+      </div>
+      <div class="comparison-item" id="gpu">
+        <p>Projection in GPU</p>
+        <li>Projecte <span id="gpu-projecte-time"></span></li>
+        <li>Projecte & Render <span id="gpu-all-time"></span></li>
+        <canvas id="gpu-canvas" width="800" height="600"></canvas>
+      </div>
+    </div>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
