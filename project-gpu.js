@@ -1,4 +1,3 @@
-import { mat4 } from "https://esm.sh/gl-matrix@3.4.3";
 import { PROJECT_VSHADER, renderToMap } from "./lib.js";
 
 const VSHADER_SOURCE = `#version 300 es

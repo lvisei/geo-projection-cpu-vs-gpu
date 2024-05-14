@@ -1,4 +1,3 @@
-import { mat4 } from "https://esm.sh/gl-matrix@3.4.3";
 import { lngLatToWorld, renderToMap } from "./lib.js";
 
 export function projectInCPU(canvas, geoPoints) {

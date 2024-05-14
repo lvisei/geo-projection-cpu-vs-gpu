@@ -1,5 +1,5 @@
-import * as webglUtils from "https://esm.sh/webgl-utils.js@1.1.0";
-import { mat4 } from "https://esm.sh/gl-matrix@3.4.3";
+import * as webglUtils from "https://esm.sh/webgl-utils.js@1";
+import { mat4 } from "https://esm.sh/gl-matrix@3";
 
 const PI = Math.PI;
 const PI_4 = PI / 4;
